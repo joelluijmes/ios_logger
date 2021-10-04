@@ -124,7 +124,11 @@
     device.activeVideoMinFrameDuration = CMTimeMake(1, FPS);
     device.activeVideoMaxFrameDuration = CMTimeMake(1, FPS);
 
-    [device setFocusModeLockedWithLensPosition:lensPosition completionHandler:nil];
+//    [device setFocusModeLockedWithLensPosition:lensPosition completionHandler:nil];
+//    device.focusMode = AVCaptureFocusModeContinuousAutoFocus;
+    
+    [self toggleAfButton:afButton];
+    
     [device unlockForConfiguration];
     
     NSString *mediaType = AVMediaTypeVideo;
