@@ -70,7 +70,7 @@
     locationManager = [[CLLocationManager alloc] init];
     locationManager.delegate = self;
     locationManager.distanceFilter = kCLDistanceFilterNone;
-    locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation;
     
     locationManager.headingOrientation = CLDeviceOrientationLandscapeLeft; //Left - "with the device held upright and the home button on the right side"
     locationManager.headingFilter = kCLHeadingFilterNone;
