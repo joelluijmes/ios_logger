@@ -504,6 +504,9 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
 {
     if (!isRecording && !isStarted)
     {
+        [UIApplication sharedApplication].idleTimerDisabled = true;
+        
+
         isStarted = YES;
         
         if (!_timer) {
@@ -552,6 +555,8 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
     else
     if (!isStarted)
     {
+        [UIApplication sharedApplication].idleTimerDisabled = false;
+        
         isRecording = NO;
         
         if ([_timer isValid]) {
